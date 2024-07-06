@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  if user
+    p Hello #{user.username}!
+    form(action='/logout', method='POST')
+      button(type='submit') Logout
+  else 
+    p Hello Anonymous
+    a(href='/login/federated/google')
+      button Login with Google
